@@ -59,11 +59,9 @@ namespace Nightmare
 
             currentScene = scene;
 
-            // Play realtime cinematic?
-            if (currentLevel > 1)
+            // Realtime cinematic on every level transition (not the initial load)
+            if (currentLevel >= 1)
                 cinema.StartCinematic(CinematicController.CinematicType.Realtime);
-            else
-                cinema.StartCinematic(CinematicController.CinematicType.PreRendered);
         }
 
         private void DisableOldScene()
